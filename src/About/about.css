@@ -1,0 +1,64 @@
+.heading-about {
+  background: url(../img/about/banner.png) !important;
+}
+marquee {
+  background-color: var(--secondar-color);
+  padding: 5px;
+  color: var(--main-color);
+}
+.know-us {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.know-us .container {
+  display: flex;
+  align-items: center;
+}
+.know-us .know-us-photo {
+  flex: 1;
+  margin-right: 30px;
+}
+.know-us .container .know-us-photo img {
+  width: 100%;
+}
+.know-us-text {
+  flex: 1;
+}
+.know-us-text h2 {
+  font-size: 2rem;
+  color: var(--main-color);
+}
+.know-us-text p {
+  line-height: 1.5;
+  color: #777;
+}
+.know-us-text span {
+  line-height: 1.5;
+  padding-bottom: 3px;
+  border-bottom: 5px dotted var(--main-color);
+}
+.know-us-text * {
+  margin-bottom: 20px;
+}
+@media (max-width: 991px) {
+  .know-us .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.download {
+  text-align: center;
+  background-color: var(--secondar-color);
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.download h2 {
+  font-size: 2.4rem;
+  color: var(--main-color);
+  margin-bottom: 20px;
+}
+@media (max-width:991px) {
+    iframe{
+        width: 90%;
+    }
+}

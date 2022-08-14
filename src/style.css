@@ -1,7 +1,7 @@
-html{
-  --main-color:#810955;
-  --secondar-color:#ffc4dd;
-  --secondary-color:#e4aec5;
+html {
+  --main-color: #810955;
+  --secondar-color: #ffc4dd;
+  --secondary-color: #e4aec5;
 }
 * {
   margin: 0;
@@ -21,10 +21,6 @@ a {
   text-decoration: none;
   display: inline-block;
   transition: all 0.6s;
-}
-a:hover {
-  background-color: var(--main-color) !important;
-  color: #fff !important;
 }
 span {
   display: block;
@@ -55,35 +51,35 @@ span {
 .header .logo img {
   width: 170px;
 }
-.fa-right-from-bracket {
-  color: #1089ff;
-}
 .navbar {
   flex: 1;
   display: flex;
   justify-content: center;
+  align-items:center ;
 }
 .navbar li {
+  display: flex;
+  align-items: center;
+}
+.navbar li a {
   height: 80px;
   display: flex;
   align-items: center;
   padding: 15px;
   font-size: 1.3rem;
 }
-.navbar li:first-child {
-  color: var(--main-color);
+.active{
+  color: var(--main-color) !important;
   font-weight: 800;
-}
-.navbar li:hover:not(:last-child) {
-  border-top: 4px var(--main-color) solid;
   background-color: var(--secondar-color);
-  color: var(--main-color);
-  transition: all 0.7s;
+  border-top: 3px var(--main-color) solid;
 }
-.fa-bars {
-  line-height: 80px;
-  cursor: pointer;
-  display: none;
+.navbar li a,
+.menu li a {
+  color: #777;
+}
+.bar {
+  display: none !important;
 }
 .header .container .menu {
   position: absolute;
@@ -97,16 +93,26 @@ span {
 .menu li {
   padding: 20px;
   font-size: 1.3rem;
-  transition: .5s padding;
+  transition: 0.5s padding;
 }
-.menu li:hover:not(:last-child){
+.menu li:hover:not(:last-child) {
   padding-left: 30px;
   background-color: var(--secondar-color);
 }
+ .navbar li:last-child *, .menu li:last-child *{
+  color: var(--main-color);
+  margin-left: 10px;
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+
+}
 @media (max-width: 991px) {
-  .header .fa-bars {
-    display: block;
+  .header .bar {
+    display:  block !important;
     padding-right: 20px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
   }
   .navbar {
     display: none;
@@ -114,15 +120,21 @@ span {
 }
 /* Landing section */
 .landing-section {
-  padding-top: 200px;
-  padding-bottom: 100px;
+  padding-top: 100px;
   background-color: var(--secondar-color);
   padding-left: 10px;
   position: relative;
-  min-height: 83vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
 }
 .landing-section .container {
   display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 3rem;
 }
 .landing-section span {
   display: block;
@@ -150,25 +162,30 @@ span {
 .landing-section .text-landing {
   margin-top: 20px;
 }
-.landing-section img {
-  width: 900px;
-  position: absolute;
-  left: 60%;
-  top: 54%;
-  transform: translate(-50%, -50%) scale(1.1);
+.landing-img-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
 }
 @media (max-width: 991px) {
   .landing-section {
     min-height: 65vh;
   }
-  .landing-section .container {
-    flex-direction: column;
-  }
-  .landing-section .container img {
-    display: none;
-  }
   .landing-section h1 {
     font-size: 2rem;
+  }
+}
+@media (min-width: 1300px) {
+  .landing-img-container {
+    height: 550px;
+  }
+  .landing-section {
+    margin-top: 0px;
+  }
+}
+@media (max-width: 767px) {
+  .landing-section .container {
+    flex-direction: column;
   }
 }
 /*Features*/
@@ -242,10 +259,12 @@ span {
   border: 1px #dddd solid;
   border-radius: 30px;
   box-shadow: 1px 1px 3px -1px var(--main-color);
-  transition: all .8s;
+  transition: all 0.8s;
 }
-.products .card:hover{
-  transform: scale(1.1);
+@media (min-width: 1199px) {
+  .products .card:hover {
+    transform: scale(1.1);
+  }
 }
 .products .card img {
   display: block;
@@ -273,7 +292,7 @@ span {
 }
 .products .card .card-footer .shopping-icon {
   color: var(--main-color);
-  background-color:var(--secondary-color);
+  background-color: var(--secondary-color);
   border: var(--main-color) 1px solid;
   font-size: 2.5rem;
   padding: 6px;
@@ -364,8 +383,13 @@ span {
 }
 .adverstment .container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(345px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 20px;
+}
+@media (max-width: 1199px) {
+  .adverstment .container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
 }
 .adverstment-card {
   height: 280px;
@@ -374,6 +398,8 @@ span {
   align-items: center;
   flex-direction: column;
   color: #fff;
+  background-size: cover;
+  background-position: 50%;
 }
 .adverstment-card h3 {
   font-size: 1.7rem;
@@ -383,15 +409,13 @@ span {
   font-weight: 800;
 }
 .adverstment-one {
-  background: url(./img/banner/b7.jpg);
+  background-image: url(./img/banner/b7.jpg);
 }
 .adverstment-two {
-  background: url(./img/banner/b4.jpg);
-  background-size: cover;
+  background-image: url(./img/banner/b4.jpg);
 }
 .adverstment-three {
-  background: url(./img/banner/b18.jpg);
-  background-size: cover;
+  background-image: url(./img/banner/b18.jpg);
 }
 /*Form*/
 .form {
@@ -462,7 +486,7 @@ span {
 }
 .footer .container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 40px;
 }
 .footer-1 h3 {
@@ -479,9 +503,9 @@ span {
 .footer-4 span {
   color: #000;
 }
-.footer-2 li:hover{
-padding-left: 10px;
-transition: .5s all;
+.footer-2 li:hover {
+  padding-left: 10px;
+  transition: 0.5s all;
 }
 .footer h5 {
   font-size: 1.4rem;
@@ -501,4 +525,9 @@ transition: .5s all;
   border: 2px var(--main-color) solid;
   margin-right: 10px;
   border-radius: 10px;
+}
+@media (max-width:991px) {
+.application * {
+    width: 120px;
+}
 }

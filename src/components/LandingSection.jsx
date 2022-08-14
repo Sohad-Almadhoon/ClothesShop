@@ -1,5 +1,5 @@
 import React from "react";
-import landingImg from "../img/hero4.png";
+import landingImg from "../img/hero.png";
 function LandingSection() {
   return (
     <div className="landing-section">
@@ -12,11 +12,11 @@ function LandingSection() {
           <span className="heading-details">
             Save more with coupons & up to 70% off!
           </span>
-          <a href="#dd" >
-            Shop Now !
-          </a>
+          <a href="#dd">Shop Now !</a>
         </div>
-        <img src={landingImg} alt ="landing-img" />
+        <div className="landing-img-container">
+          <img src={landingImg} alt="landing-img" />
+        </div>
       </div>
     </div>
   );
